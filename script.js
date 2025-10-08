@@ -253,6 +253,22 @@ gsap.fromTo("#stars path:nth-of-type(40)", { opacity: 0.3 }, { opacity: 1, durat
 gsap.fromTo("#stars path:nth-of-type(45)", { opacity: 0.3 }, { opacity: 1, duration: 0.3, repeat: -1, repeatDelay: 1.8 });
 gsap.fromTo("#stars path:nth-of-type(48)", { opacity: 0.3 }, { opacity: 1, duration: 0.3, repeat: -1, repeatDelay: 1 });
 
+/* Work Showcase Animation */
+gsap.utils.toArray(".work-box").forEach((box, i) => {
+    gsap.to(box, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: i * 0.1,
+        scrollTrigger: {
+            trigger: ".works-showcase",
+            start: "top 80%",
+            end: "bottom 100%",
+            toggleActions: "play none none none"
+        }
+    });
+});
+
 //reset scrollbar position after refresh
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
