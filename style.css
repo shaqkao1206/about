@@ -55,6 +55,96 @@ svg {
     color: #1B1734;
 }
 
+/* Work Showcase Section */
+.works-showcase {
+    position: relative;
+    top: 6000px;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #1B1734 0%, #2a1f4a 100%);
+    padding: 80px 20px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.showcase-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.work-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.work-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.work-content {
+    padding: 40px;
+    text-align: center;
+}
+
+.work-content h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.work-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Animation for work boxes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.work-box:nth-child(1) { animation-delay: 0.1s; }
+.work-box:nth-child(2) { animation-delay: 0.2s; }
+.work-box:nth-child(3) { animation-delay: 0.3s; }
+.work-box:nth-child(4) { animation-delay: 0.4s; }
+.work-box:nth-child(5) { animation-delay: 0.5s; }
+.work-box:nth-child(6) { animation-delay: 0.6s; }
+
 /* MARK: ---0-490 Mobile */
 @media (max-width: 490px) {
 
@@ -67,5 +157,23 @@ svg {
     #info2 {
         transform-origin: 50% 50%;
         transform: translateY(-120px) scale(0.8);
+    }
+
+    .showcase-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .work-box {
+        min-height: 200px;
+    }
+
+    .work-content h3 {
+        font-size: 1.5rem;
     }
 }
